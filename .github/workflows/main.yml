@@ -1,0 +1,37 @@
+name: Terraform
+on: [pull_request]
+jobs:
+   WhateverName:
+    name: Terraform
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v1.0.0
+       
+    - name: Terraform - Init
+      uses: kleeadrian/terraform-github-actions/init@v0.3.6.2
+      env:
+         ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
+         ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
+         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
+         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
+
+    - name: Terraform - Validate
+      uses: kleeadrian/terraform-github-actions/validate@v0.3.6.2
+ 
+    - name: Terraform - Plan
+      uses: kleeadrian/terraform-github-actions/plan@v0.3.6.2
+      env:   
+         ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
+         ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
+         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
+         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
+        
+    - name: Terraform - Apply
+      uses: kleeadrian/terraform-github-actions/apply@v0.3.6.2
+      env:   
+         ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
+         ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
+         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
+         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
+   
