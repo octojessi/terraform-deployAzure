@@ -13,8 +13,8 @@ jobs:
       env:
          ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
          ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
-         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
-         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
+         ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
+         ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID}}
 
     - name: Terraform - Validate
       uses: hashicorp/terraform-github-actions/validate@v0.4.6
@@ -24,14 +24,14 @@ jobs:
       env:   
          ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
          ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
-         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
-         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
+         ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
+         ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID}}
         
     - name: Terraform - Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.6
       env:   
          ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
          ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
-         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
-         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
+         ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
+         ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID}}
    
