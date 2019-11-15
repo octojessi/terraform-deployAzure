@@ -1,7 +1,14 @@
 name: Terraform
-on: [pull_request]
+
+on:
+   push:
+      branches: 
+        - master
+      paths-ignore:
+        - '.github/**'
+
 jobs:
-   WhateverName:
+   terraform:
     name: Terraform
     runs-on: ubuntu-latest
     steps:
