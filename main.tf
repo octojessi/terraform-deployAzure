@@ -1,6 +1,6 @@
 
 provider "azurerm" {
-  version = "=1.33.0"
+  version = "=1.43.0"
 }
 
 terraform {
@@ -13,8 +13,8 @@ terraform {
 }
 
 resource "azurerm_resource_group" "rsg_app_plan" {
-  name     = "hashicorptest"
-  location = "Australia East"
+  name     = "rhoticity-test"
+  location = "US Central"
 }
 
 resource "azurerm_app_service_plan" "app_plan_test" {
