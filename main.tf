@@ -12,7 +12,7 @@ terraform {
   }
 }
 
-resource "azurerm_resource_group" "tf-actions-demo-jjm" {
+resource "azurerm_resource_group" "rsg_app_plan" {
   name     = "tf-actions-demo-21220"
   location = "eastus"
 }
