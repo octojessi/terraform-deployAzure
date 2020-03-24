@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "rsg_app_plan" {
 }
 
 resource "azurerm_app_service_plan" "app_plan_test" {
-  name                = "hashigithub123123"
+  name                = "hashigithub1231231"
   location            = "${azurerm_resource_group.rsg_app_plan.location}"
   resource_group_name = "${azurerm_resource_group.rsg_app_plan.name}"
   kind = "Linux"
